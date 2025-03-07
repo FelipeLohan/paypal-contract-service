@@ -1,4 +1,5 @@
 import model.entities.Contract;
+import model.services.PaypalService;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,6 +11,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+        PaypalService ps = new PaypalService();
+        System.out.println(ps.interest(200.0, 3));
 
         System.out.println("--Entre os dados do contrato--");
         System.out.println("Numero do contrato: ");
