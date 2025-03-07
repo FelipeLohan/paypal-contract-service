@@ -9,7 +9,7 @@ public class Contract {
     private Date date;
     private Double totalValue;
 
-    List<Installment> installments = new ArrayList<Installment>();
+    List<Installment> installments = new ArrayList<>();
 
     public Contract(Integer number, Date date, Double totalValue) {
         this.number = number;
