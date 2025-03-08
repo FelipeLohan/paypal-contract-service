@@ -2,18 +2,16 @@ package model.services;
 
 public class PaypalService implements OnlinePaymentService{
 
+    private static final double FEE_PERCENTAGE = 0.02;
+    private static final double MONTHLY_INTEREST = 0.01;
+
     @Override
-    public Double paymentFee(Double amount) {
-        return 0.2 * amount;
+    public double paymentFee(double amount) {
+        return amount * FEE_PERCENTAGE;
     }
 
     @Override
-    public Double interest(Double amount, Integer months){
-        double result = 0;
-        for (int i = 0; i < months; i++){
-            result += amount * 0.01;
-        }
-
-        return result;
+    public double interest(double amount, int months) {
+        return amount * MONTHLY_INTEREST * months;
     }
 }
